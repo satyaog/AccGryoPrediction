@@ -1,0 +1,16 @@
+app/build/
+app/lib/bower_components/requirejs/*
+app/lib/bower_components/sylvester/*
+app/lib/bower_components/text/*
+app/lib/kalman/*
+
+!app/lib/bower_components/requirejs/LICENSE
+!app/lib/bower_components/requirejs/require.js
+!app/lib/bower_components/sylvester/sylvester.js
+!app/lib/bower_components/text/LICENSE
+!app/lib/bower_components/text/text.js
+!app/lib/bower_components/threejs/build/three.js
+!app/lib/bower_components/threejs/build/three.min.js
+!app/lib/bower_components/threejs/examples/js/controls/OrbitControls.js
+!app/lib/bower_components/threejs/LICENSE
+!app/lib/kalman/kalman.js
