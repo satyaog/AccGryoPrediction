@@ -9,7 +9,7 @@ BUILD_CMD = cd $(project_directory)/scripts; java -classpath js.jar:compiler.jar
 
 PYTHON_SERVER_CMD = python3 -m http.server || python -m SimpleHTTPServer || python -m http.server
 
-all: build server
+all: install build server
 
 setup: install build
 
