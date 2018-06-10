@@ -20,3 +20,5 @@ make build
 ```
 make server
 ```
+
+Navigate to http://localhost:8000
