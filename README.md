@@ -2,9 +2,10 @@
 
 ## Dependencies
 
-* RequireJS
-* Sylvester
-* Three.js
+* [RequireJS](http://www.requirejs.org/)
+* [Sylvester](http://sylvester.jcoglan.com/)
+* [Three.js](https://threejs.org/)
+* [Kalman](https://github.com/itamarwe/kalman)
 
 ### Setup
 ```
