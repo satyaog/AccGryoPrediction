@@ -11,11 +11,6 @@
 make setup
 ```
 
-## Build
-```
-make build
-```
-
 ## Execute
 ```
 make server
