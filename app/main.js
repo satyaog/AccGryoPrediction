@@ -8,12 +8,27 @@ requirejs(["config"], function ()
              , "com/generators/objCompassGeneratorFromData", "com/generators/objGyroGeneratorFromData", "com/system9DoF"
              , "com/system9DoFPrediction", "com/system9DoFPredictionKalman"
              , "three", "orbitcontrols"]
-            , function (Acceleration1Generator, Acceleration2Generator, AngularSpeed1Generator
-                        , AngularSpeed2Generator, CamAccGeneratorFromData, CamCompassGeneratorFromData
-                        , CamGyroGeneratorFromData, CompassGenerator, ObjAccGeneratorFromData
-                        , ObjCompassGeneratorFromData, ObjGyroGeneratorFromData, System9DoF
-                        , System9DoFPrediction, System9DoFPredictionKalman)
+            , function ()
     {
+      var Acceleration1Generator = require("com/generators/acceleration1Generator");
+      var Acceleration2Generator = require("com/generators/acceleration2Generator");
+      var AngularSpeed1Generator = require("com/generators/angularSpeed1Generator");
+
+      var AngularSpeed2Generator = require("com/generators/angularSpeed2Generator");
+      var CamAccGeneratorFromData = require("com/generators/camAccGeneratorFromData");
+      var CamCompassGeneratorFromData = require("com/generators/camCompassGeneratorFromData");
+
+      var CamGyroGeneratorFromData = require("com/generators/camGyroGeneratorFromData");
+      var CompassGenerator = require("com/generators/compassGenerator");
+      var ObjAccGeneratorFromData = require("com/generators/objAccGeneratorFromData");
+
+      var ObjCompassGeneratorFromData = require("com/generators/objCompassGeneratorFromData");
+      var ObjGyroGeneratorFromData = require("com/generators/objGyroGeneratorFromData");
+      var System9DoF = require("com/system9DoF");
+
+      var System9DoFPrediction = require("com/system9DoFPrediction");
+      var System9DoFPredictionKalman = require("com/system9DoFPredictionKalman");
+
       var SystemVisualRepresentation = function ()
       {
         this.visualRepresentation = null;
@@ -52,7 +67,7 @@ requirejs(["config"], function ()
 
       function createXAxis(length, opacity)
       {
-        var geometry = new THREE.CylinderBufferGeometry(length/50., length*3./50., length, 5);
+        var geometry = new THREE.CylinderBufferGeometry(length/50., length*2./50., length, 5);
         var material = new THREE.MeshBasicMaterial({color: 0xff0000, transparent: opacity < 0.9999, opacity: opacity});
         var axis = new THREE.Mesh(geometry, material);
 
@@ -65,7 +80,7 @@ requirejs(["config"], function ()
 
       function createYAxis(length, opacity)
       {
-        var geometry = new THREE.CylinderBufferGeometry(length/50., length*3./50., length, 5);
+        var geometry = new THREE.CylinderBufferGeometry(length/50., length*2./50., length, 5);
         var material = new THREE.MeshBasicMaterial({color: 0x00ff00, transparent: opacity < 0.9999, opacity: opacity});
         var axis = new THREE.Mesh(geometry, material);
 
@@ -76,7 +91,7 @@ requirejs(["config"], function ()
 
       function createZAxis(length, opacity)
       {
-        var geometry = new THREE.CylinderBufferGeometry(length/50., length*3./50., length, 5);
+        var geometry = new THREE.CylinderBufferGeometry(length/50., length*2./50., length, 5);
         var material = new THREE.MeshBasicMaterial({color: 0x0000ff, transparent: opacity < 0.9999, opacity: opacity});
         var axis = new THREE.Mesh(geometry, material);
 
