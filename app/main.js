@@ -13,19 +13,19 @@ requirejs(["config"], function ()
       var Acceleration1Generator = require("com/generators/acceleration1Generator");
       var Acceleration2Generator = require("com/generators/acceleration2Generator");
       var AngularSpeed1Generator = require("com/generators/angularSpeed1Generator");
-
       var AngularSpeed2Generator = require("com/generators/angularSpeed2Generator");
+
       var CamAccGeneratorFromData = require("com/generators/camAccGeneratorFromData");
       var CamCompassGeneratorFromData = require("com/generators/camCompassGeneratorFromData");
-
       var CamGyroGeneratorFromData = require("com/generators/camGyroGeneratorFromData");
-      var CompassGenerator = require("com/generators/compassGenerator");
-      var ObjAccGeneratorFromData = require("com/generators/objAccGeneratorFromData");
 
+      var CompassGenerator = require("com/generators/compassGenerator");
+
+      var ObjAccGeneratorFromData = require("com/generators/objAccGeneratorFromData");
       var ObjCompassGeneratorFromData = require("com/generators/objCompassGeneratorFromData");
       var ObjGyroGeneratorFromData = require("com/generators/objGyroGeneratorFromData");
-      var System9DoF = require("com/system9DoF");
 
+      var System9DoF = require("com/system9DoF");
       var System9DoFPrediction = require("com/system9DoFPrediction");
       var System9DoFPredictionKalman = require("com/system9DoFPredictionKalman");
 
@@ -281,7 +281,7 @@ requirejs(["config"], function ()
 
         requestAnimationFrame(animate);
 
-        var delta = 0.1;
+        var delta = 0.;
         var now = nowMsec / 1000.;
         lastTimeMsec = nowMsec;
 

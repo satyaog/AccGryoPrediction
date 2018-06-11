@@ -12,7 +12,7 @@ define(function (require)
     this.predictedGyroscope =  new THREE.Vector3();
 
     this._updateFrequency = 0.2;
-    this._lastFrame = 0;
+    this._lastFrame = -1;
     this._predictionTime = 0;
   };
 

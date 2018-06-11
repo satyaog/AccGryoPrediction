@@ -13,6 +13,8 @@ define(function (require)
     this._data = [];
     this._dataLength = 0;
     this._dataIndex = 0;
+
+    this._previousEntry = null;
   };
 
   ThreeDoFGeneratorFromData.prototype = Object.create(ThreeDoFGenerator.prototype);
@@ -26,23 +28,33 @@ define(function (require)
 
     this._dataLength = this._data.length;
     this._dataIndex = 0;
+
+    if (this._dataLength > 0 && this._data[0].time === 0)
+    {
+      this._previousEntry = this._data[0];
+      this._transformation = new THREE.Vector3(this._previousEntry.x, this._previousEntry.y, this._previousEntry.z);
+    }
+    else
+    {
+      this._previousEntry = null;
+      this._transformation = new THREE.Vector3();
+    }
   };
 
   ThreeDoFGeneratorFromData.prototype._computeNext = function (frame)
   {
     var frameTime = frame * this._updateFrequency;
     var entry = null;
-    var previousEntry = {x: 0., y: 0, z: 0};
 
     for (this._dataIndex; this._dataIndex < this._dataLength; ++this._dataIndex)
     {
       entry = this._data[this._dataIndex];
-      if (entry.time >= frameTime)
+      if (entry.time > frameTime)
       {
-        this._transformation = new THREE.Vector3(previousEntry.x, previousEntry.y, previousEntry.z);
+        this._transformation = new THREE.Vector3(this._previousEntry.x, this._previousEntry.y, this._previousEntry.z);
         break;
       }
-      previousEntry = entry;
+      this._previousEntry = entry;
     }
   };
 
