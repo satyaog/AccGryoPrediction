@@ -113,6 +113,8 @@ define(function (require)
   {
     System9DoFPrediction.call(this);
 
+    this._samplingFrequency = 1. / 30.;
+
     this._kalmanAcc =
     {
       model: null
@@ -152,7 +154,7 @@ define(function (require)
 
   System9DoFPredictionKalman.prototype.readAccelerometer = function (animationTime)
   {
-    var frameCount = Math.floor(animationTime / this._updateFrequency) - this._lastFrame;
+    var frameCount = Math.floor(animationTime / this._samplingFrequency) - this._lastFrame;
 
     var temporaryModel = new Kalman.Model(this._kalmanAcc.model.x_k, this._kalmanAcc.model.P_k, this._kalmanAcc.model.F_k, this._kalmanAcc.model.Q_k);
 
@@ -171,7 +173,7 @@ define(function (require)
 
   System9DoFPredictionKalman.prototype.readGyroscope = function (animationTime)
   {
-    var frameCount = Math.floor(animationTime / this._updateFrequency) - this._lastFrame;
+    var frameCount = Math.floor(animationTime / this._samplingFrequency) - this._lastFrame;
 
     var temporaryModel = new Kalman.Model(this._kalmanGyro.model.x_k, this._kalmanGyro.model.P_k, this._kalmanGyro.model.F_k, this._kalmanGyro.model.Q_k);
 
