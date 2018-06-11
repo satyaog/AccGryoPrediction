@@ -7,7 +7,7 @@ define(function (require)
   var ThreeDoFGenerator = function ()
   {
     this._updateFrequency = 1./30.;
-    this._lastFrame = 0;
+    this._lastFrame = -1;
 
     this._transformation = new THREE.Vector3();
 
