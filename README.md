@@ -1,4 +1,4 @@
-# AccGryoPrediction
+# AccGyroPrediction
 
 ## Dependencies
 
