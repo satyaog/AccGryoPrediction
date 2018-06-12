@@ -2,17 +2,16 @@
 
 ## Dependencies
 
-### Package management
-
-* [npm](https://www.npmjs.com/)
-* [Bower](https://bower.io/)
-
 ### Libraries
 
 * [RequireJS](http://www.requirejs.org/)
 * [Sylvester](http://sylvester.jcoglan.com/)
 * [Three.js](https://threejs.org/)
 * [Kalman](https://github.com/itamarwe/kalman)
+
+### Packages Management
+
+* [Bower](https://bower.io/)
 
 ### Compiler
 
@@ -34,5 +33,6 @@ make setup
 ```
 make server
 ```
+_This will start a local python 2 or python 3 server_
 
 Navigate to http://localhost:8000
