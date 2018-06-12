@@ -33,6 +33,6 @@ make setup
 ```
 make server
 ```
-_This will start a local python 2 or python 3 server_
+_This will start a local python 2 or python 3 http server_
 
 Navigate to http://localhost:8000
